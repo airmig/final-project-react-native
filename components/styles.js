@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     onboard: {
         backgroundColor:  '#cbd2d9',
         alignItems: 'center',
-        fontSize: 40
+        fontSize: 30
     },
     onboardquote: {
         backgroundColor:  '#cbd2d9',
@@ -31,10 +31,10 @@ export const styles = StyleSheet.create({
     },
     onboardheader: {
         paddingTop: 40,
-        fontSize: 40,
+        fontSize: 30,
     },
     onboardtext: {
-        fontSize: 40,
+        fontSize: 30,
     },
     inputs: {
         alignItems: 'center',
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
     },
     input: {
         marginTop: 10,
-        fontSize: 40,
+        fontSize: 30,
         height: 80,
         width: '100%',
         borderColor: '#000', 
@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
         alignItems: 'flex-end'
     },
     button: {
-        marginTop: 60,
+        marginTop: 15,
         marginRight: 30,
         backgroundColor:'#cbd2d9',
         width: 280,
@@ -66,7 +66,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center'
     },
     buttontext: {
-        fontSize: 40
+        fontSize: 30
     },
     buttongood: {
         marginTop: 60,
@@ -80,5 +80,91 @@ export const styles = StyleSheet.create({
     buttontextgood: {
         fontSize: 40,
         color: 'white'
+    },
+    loading: {
+        flex: 8,
+        alignItems: 'center',
+        marginTop: 150
+    },
+    loadingtext: {
+        fontSize: 60,
+    },
+    loadingwait: {
+        fontSize: 50,
+    },
+    profilecontainer: {
+        backgroundColor: '#495e57',
+        justifyContent: 'center',
+        alignItems: 'center',
+        overflow: 'hidden',
+      },
+    profileheader: {
+        flexDirection:'row', 
+        flexWrap:'wrap',
+        marginTop: 30,
+        flex: 1,
+        padding: 10
+    },
+    profilearrow: {
+    },
+    profilefototext: {
+        backgroundColor: '#495e57',
+        borderRadius: 50,
+        fontSize: 30,
+        paddingLeft: 20,
+        paddingRight: 20,
+        color: 'white',
+        paddingTop: 5
+    },
+    profilelogo: {
+        height: 60,
+        width: 260,
+        resizeMode: 'contain',
+        marginLeft: 10
+    },
+    profiledata: {
+        borderWidth: 1, 
+        borderRadius: 10, 
+        padding: 20,
+        margin: 5
+    },
+    personal: {
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+    personalnotifications: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginTop: 20
+    },
+    avatarcontainer: {
+        flexDirection:'row', 
+        flexWrap:'wrap',
+        marginTop: 8,
+        flex: 1,
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    profileinput:{
+        height: 40, 
+        borderColor: 'gray', 
+        borderWidth: 1, 
+        padding: 10,
+        borderRadius: 10
+    },
+    profileinputselected:{
+        margin: 15,
+        padding: 10,
+        borderWidth: 1,
+        borderRadius: 10,
+        backgroundColor: '#495e57',
+    },
+    logout: {
+        borderWidth: 1,
+        borderRadius: 10,
+        backgroundColor: '#F4ce14',
+        padding: 15,
+        alignItems: 'center',
     }
 });
