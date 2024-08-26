@@ -30,14 +30,12 @@ export default function Profile({navigation}){
           aspect: [4, 3],
           quality: 1,
         });
-        console.log('result image:', result.cancelled);
         if (!result.cancelled)
             setImage(result);
     }
 
     useEffect(()=>{
         getValue('profileData').then(value => {
-          console.log('loadingProfile', value);
           setEmail(value.email);
           setFirstName(value.name);
           setLastName(value.lastName);
@@ -87,7 +85,6 @@ export default function Profile({navigation}){
         else {
             updateValues(formData).then(value=>{
                 //do nothing
-                console.log('data saved');
                 navigation.navigate('Home', {
                     refresh: Date.now(),
                   });

@@ -30,7 +30,6 @@ export const getValue = async(key) => {
 
 export const setValue = async(key, value) => {
   try{
-    console.log('saving', value);
     await AsyncStorage.setItem(key, JSON.stringify(value));
   }
   catch(error){
@@ -49,7 +48,6 @@ export const clearStorage = async () => {
  export const updateValues = async (values) => {
   try {
     const jsonValue = JSON.stringify(values);
-    console.log('saving', jsonValue);
     await AsyncStorage.setItem("profileData", jsonValue);
   } catch(e) {
    console.error('Error updating values', e);

@@ -102,7 +102,7 @@ export const styles = StyleSheet.create({
         flexDirection:'row', 
         flexWrap:'wrap',
         marginTop: 30,
-        flex: 1,
+        flex: 0,
         padding: 10
     },
     profilearrow: {
@@ -174,8 +174,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
     },
     hero: {
-        backgroundColor: '#495e57',
-        marginTop: 55
+        backgroundColor: '#495e57'
     },
     herotitle: {
         marginLeft: 20,
@@ -215,6 +214,77 @@ export const styles = StyleSheet.create({
         marginTop: 5
     },
     domcontainer: {
-        flex: 0.46
+        flex: 1
+    },
+    filterview: {
+        flexDirection:'row', 
+        flexWrap:'wrap',
+    },
+    unselectedcategory: {
+        padding: 10,
+    },
+    textunselected: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        borderWidth: 1,
+        borderColor: 'black',
+        padding: 10,
+        borderRadius: 10,
+        backgroundColor: '#c4c4c4'
+    },
+    textselected: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        borderWidth: 1,
+        borderColor: 'black',
+        padding: 10,
+        borderRadius: 10,
+        backgroundColor: '#495e57'
+    },
+    itemtitle: {
+        fontWeight: 'bold',
+        paddingTop: 10,
+        paddingBottom: 10,
+        fontSize: 20,
+        marginLeft: 20
+    },
+    itemview: {
+        flexDirection:'row', 
+        flexWrap:'wrap',
+        marginTop: 0,
+        marginLeft: 20,
+        marginRight: 20,
+        marginBottom: 20,
+        alignItems: 'center',
+        flex: 0
+    },
+    itemcontainer: {
+        width: '50%'
+    },
+    itempricetext: {
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+    itemimage: {
+        resizeMode: 'cover',
+        height: 100,
+        width: 180
+    },
+    separator:{
+        borderBottomWidth: 1,
+        borderStyle: 'dashed',
+        borderColor: 'black'
+    },
+    searchbar: {
+        flex: 0,
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        margin: 20,
+        borderRadius: 15,
+        padding: 10
+    },
+    searchtext:{
+        fontSize: 25,
+        marginLeft: 10
     }
 });

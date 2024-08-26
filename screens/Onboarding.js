@@ -22,7 +22,6 @@ export default function Onboarding({navigation}){
 
     useEffect(()=>{
         getValue('profileData').then(value => {
-          console.log(Object.keys(value).length);
           if (Object.keys(value).length > 0)
             navigation.navigate('Profile');
         })
@@ -32,12 +31,10 @@ export default function Onboarding({navigation}){
       },[]);
 
     function validInputFields(){
-        console.log(validateEmail(email));
         return userName.length > 0 && !validateEmail(email);
     }
 
     function submitProfile(){
-        console.log("submitted");
         const formData = {
             name: userName,
             email: email
@@ -53,7 +50,6 @@ export default function Onboarding({navigation}){
         })().then( () => {
             setEmail('');
             setUserName('');
-            console.log('data', profileData, loggedIn);
             navigation.navigate('Profile');
           })
           .catch(error => {
