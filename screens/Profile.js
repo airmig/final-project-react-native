@@ -30,11 +30,14 @@ export default function Profile({navigation}){
           aspect: [4, 3],
           quality: 1,
         });
+        console.log('result image:', result.cancelled);
+        if (!result.cancelled)
+            setImage(result);
     }
 
     useEffect(()=>{
         getValue('profileData').then(value => {
-          console.log(value);
+          console.log('loadingProfile', value);
           setEmail(value.email);
           setFirstName(value.name);
           setLastName(value.lastName);
@@ -43,12 +46,13 @@ export default function Profile({navigation}){
           setPasswordChange(value.passwordstatus);
           setOrderStatus(value.orderstatus);
           setNewsletter(value.newsletterstatus);
+          setImage(value.image);
           setLoading(false);
         })
         .catch(error => {
           console.error('Error getting values:', error);
         });
-      },[]);
+      },[firstName]);
 
     function isValidPhoneNumber(number){
         const tenDigitRegex = /^[0-9]{10}$/;
@@ -73,38 +77,39 @@ export default function Profile({navigation}){
             orderstatus: orderStatus,
             passwordstatus: passwordChange,
             offerstatus: specialOffers,
-            newsletterstatus: newsletter
+            newsletterstatus: newsletter,
+            image: image
         }
 
         if (!phoneCheck){
             Alert.alert('Cannot save changes invalid phone number.');
         }
         else {
-            console.log('trying', formData);
             updateValues(formData).then(value=>{
                 //do nothing
                 console.log('data saved');
+                navigation.navigate('Home', {
+                    refresh: Date.now(),
+                  });
             })
             .catch(error => {
                 console.error('Error updating values:', error);
               });
         }
-        //const profileData =  ["profileData", JSON.stringify(formData)];
-       
     }
     return <ScrollView>
         {isLoading && <Loading/>}
     {!isLoading && (<><View style={styles.profileheader}>
         <View style={[styles.profilecontainer, { width: 60, height: 60, borderRadius: 60 / 2 }]}>
-            <Text style={styles.profilefototext}><AntDesign name="arrowleft" size={18} color="white"  /></Text>
+         <Text style={styles.profilefototext}><Pressable onPress={()=>navigation.navigate('Home')}><AntDesign name="arrowleft" size={18} color="white"  /></Pressable></Text>
         </View>
         <Image style={styles.profilelogo} source={require('../assets/Logo.png')} />
-        <ProfilePicture uri={image} name={(firstName + ' ' + lastName)}/>
+        <ProfilePicture navigation={navigation} image={image} name={(firstName + ' ' + lastName)}/>
     </View>
     <View style={styles.profiledata}>
     <Text style={styles.personal}>Personal Information</Text>
     <View style={styles.avatarcontainer}>
-        <ProfilePicture uri={image} name={(firstName + ' ' + lastName)}/>
+        <ProfilePicture navigation={navigation} image={image} name={(firstName + ' ' + lastName)}/>
         <Pressable style={styles.profileinputselected} onPress={pickImage}><Text style={{color: 'white'}}>Change</Text></Pressable>
         <Pressable style={styles.profileinput} onPress={()=>{setImage(null)}}><Text>Remove</Text></Pressable>
     </View>
@@ -137,7 +142,7 @@ export default function Profile({navigation}){
 
         <Pressable onPress={logout} style={styles.logout}><Text style={{fontWeight: 'bold'}}>Log out</Text></Pressable>
         <View style={styles.avatarcontainer}>
-        <Pressable style={styles.profileinput}><Text>Discard changes</Text></Pressable>
+        <Pressable onPress={()=>{navigation.navigate('Home')}} style={styles.profileinput}><Text>Discard changes</Text></Pressable>
         <Pressable onPress={saveChanges} style={styles.profileinputselected}><Text style={{color:'white'}}>Save changes</Text></Pressable>
         </View>
     </View>

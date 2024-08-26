@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import { getValue } from './utils/util';
 import Loading from './components/Loading';
 import Profile from './screens/Profile';
+import Home from './screens/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,10 +30,10 @@ export default function App() {
     <View style={styles.main}>
       <NavigationContainer>
         <Stack.Navigator>
-          { loggedIn == null && <Stack.Screen options={{ headerShown: false }}  name="Loading" component={Loading}/>}
+          { loggedIn == null && <><Stack.Screen options={{ headerShown: false }}  name="Loading" component={Loading}/></>}
           {!loggedIn && <><Stack.Screen options={{ headerShown: false }}  name="Onboarding" component={Onboarding}/>
-          <Stack.Screen options={{ headerShown: false }}  name="Profile" component={Profile}/></>}
-          {loggedIn &&  <><Stack.Screen options={{ headerShown: false }}  name="Onboarding" component={Onboarding}/><Stack.Screen options={{ headerShown: false }}  name="Profile" component={Profile}/></>}
+          <Stack.Screen options={{ headerShown: false }}  name="Profile" component={Profile}/><Stack.Screen options={{ headerShown: false }} name="Home" component={Home} /></>}
+          {loggedIn &&  <><Stack.Screen options={{ headerShown: false }} name="Home" component={Home} /><Stack.Screen options={{ headerShown: false }}  name="Onboarding" component={Onboarding}/><Stack.Screen options={{ headerShown: false }}  name="Profile" component={Profile}/></>}
         </Stack.Navigator>
       </NavigationContainer>
     </View>

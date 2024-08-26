@@ -53,6 +53,7 @@ export default function Onboarding({navigation}){
         })().then( () => {
             setEmail('');
             setUserName('');
+            console.log('data', profileData, loggedIn);
             navigation.navigate('Profile');
           })
           .catch(error => {

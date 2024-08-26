@@ -122,6 +122,12 @@ export const styles = StyleSheet.create({
         resizeMode: 'contain',
         marginLeft: 10
     },
+    profilelogohome: {
+        height: 60,
+        width: 260,
+        resizeMode: 'contain',
+        marginLeft: 70
+    },
     profiledata: {
         borderWidth: 1, 
         borderRadius: 10, 
@@ -166,5 +172,49 @@ export const styles = StyleSheet.create({
         backgroundColor: '#F4ce14',
         padding: 15,
         alignItems: 'center',
+    },
+    hero: {
+        backgroundColor: '#495e57',
+        marginTop: 55
+    },
+    herotitle: {
+        marginLeft: 20,
+        marginTop: 5,
+        fontSize: 30,
+        color: '#F4ce14'
+    },
+    herosubtitle: {
+        color: 'white',
+        fontSize: 15,
+        marginLeft: 20
+    },
+    herotext: {
+        color: 'white',
+        marginLeft: 10,
+        width: '40%'
+    },
+    heroimage: {
+        resizeMode: 'contain',
+        width: '40%',
+        height: 140,
+        borderRadius: 10,
+        marginLeft: 40
+    },
+    herocontainer: {
+        flexDirection:'row', 
+        flexWrap:'wrap',
+        marginTop: 0,
+        marginLeft: 10,
+        marginBottom: 20,
+        alignItems: 'center',
+        backgroundColor: '#495e57'
+    },
+    ordertitle: {
+        fontWeight: 'bold',
+        marginLeft: 20,
+        marginTop: 5
+    },
+    domcontainer: {
+        flex: 0.46
     }
 });
